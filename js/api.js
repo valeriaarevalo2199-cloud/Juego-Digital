@@ -3,7 +3,7 @@ API.JS
 Comunicación con Google Apps Script y Google Sheets
 ========================================================= */
 
-const API_URL = "https://script.google.com/macros/s/AKfycby3VvaRaGon6B0rZjTIfytgx2e4l0fbMp6BlhIZU80gcnAZEUU7WCk5Vy4SK5Xk52VL/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbxCHktsnTV_aBhMAWtgHGMPzgPdyLBy_N0rnbxe4oPHwzkD2-mq_JACkro4Y0VkWenA/exec";
 
 /* =========================================================
 REGISTRAR PARTICIPANTE
