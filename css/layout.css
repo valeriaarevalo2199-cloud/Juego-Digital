@@ -1,0 +1,213 @@
+/* =========================================================
+   LAYOUT.CSS
+   Distribución y estructura de pantallas
+   ========================================================= */
+
+/* ---------- Tarjeta principal ---------- */
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+/* ---------- Sección de registro ---------- */
+
+.registration {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---------- Separador visual ---------- */
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(148, 163, 184, 0.12);
+}
+
+/* ---------- Pantallas del juego ---------- */
+
+.screen {
+    display: none;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.screen.active {
+    display: flex;
+}
+
+/* ---------- Cabecera del juego ---------- */
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.game-title {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.game-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.score {
+    background: rgba(34, 211, 238, 0.12);
+    border: 1px solid rgba(34, 211, 238, 0.22);
+    color: #67e8f9;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* ---------- Barra de progreso ---------- */
+
+.progress {
+    width: 100%;
+    height: 10px;
+    background: rgba(148, 163, 184, 0.14);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.progress__bar {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #2563eb, #22d3ee);
+    border-radius: inherit;
+    transition: width 0.35s ease;
+}
+
+/* ---------- Contenedor de preguntas ---------- */
+
+.question-card {
+    background: rgba(15, 23, 42, 0.65);
+    border: 1px solid rgba(148, 163, 184, 0.16);
+    border-radius: 20px;
+    padding: 28px;
+}
+
+.question-number {
+    color: #67e8f9;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.question-text {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+/* ---------- Opciones ---------- */
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 20px;
+    border-radius: 16px;
+    background: rgba(15, 23, 42, 0.9);
+    border: 1px solid rgba(148, 163, 184, 0.16);
+    cursor: pointer;
+    transition:
+        border-color 0.22s ease,
+        transform 0.18s ease,
+        background 0.22s ease;
+}
+
+.option:hover {
+    border-color: rgba(96, 165, 250, 0.34);
+    transform: translateY(-1px);
+}
+
+.option.selected {
+    border-color: rgba(37, 99, 235, 0.55);
+    background: rgba(37, 99, 235, 0.12);
+}
+
+/* ---------- Navegación ---------- */
+
+.game-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+/* ---------- Pantalla de resultados ---------- */
+
+.results {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.results__score {
+    font-size: 56px;
+    font-weight: 800;
+    color: #22d3ee;
+}
+
+.results__message {
+    color: #cbd5e1;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 640px) {
+
+    .card {
+        gap: 28px;
+    }
+
+    .game-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .game-meta {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .question-card {
+        padding: 22px;
+    }
+
+    .question-text {
+        font-size: 20px;
+    }
+
+    .game-actions {
+        flex-direction: column;
+    }
+
+    .game-actions .button-primary {
+        width: 100%;
+    }
+
+    .results__score {
+        font-size: 44px;
+    }
+}
