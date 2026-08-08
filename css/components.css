@@ -1,9 +1,25 @@
 /* =========================================================
    COMPONENTS.CSS
-   Componentes reutilizables: formularios, inputs y botones
+   Componentes reutilizables del juego
    ========================================================= */
 
-/* ---------- Formulario ---------- */
+/* =========================================================
+   PANEL DE REGISTRO
+   ========================================================= */
+
+.registration-panel {
+    background: rgba(8, 10, 26, 0.72);
+    border: 1px solid rgba(120, 130, 255, 0.18);
+    border-radius: 22px;
+    padding: 28px;
+    box-shadow:
+        inset 0 0 30px rgba(108, 92, 255, 0.06),
+        0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* =========================================================
+   FORMULARIO
+   ========================================================= */
 
 .form {
     display: flex;
@@ -17,33 +33,28 @@
     gap: 8px;
 }
 
-/* ---------- Etiquetas ---------- */
-
 .form-group label {
     color: #e2e8f0;
-    font-size: 14px;
-    font-weight: 600;
+    font-family: "Orbitron", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
-/* ---------- Campos de entrada ---------- */
+/* =========================================================
+   INPUTS FUTURISTAS
+   ========================================================= */
 
 .form-group input {
     width: 100%;
-
-    background: rgba(15, 23, 42, 0.92);
-
-    border: 1px solid rgba(148, 163, 184, 0.18);
-
+    background: rgba(4, 6, 18, 0.96);
+    border: 1px solid rgba(120, 130, 255, 0.18);
     border-radius: 16px;
-
     color: #f8fafc;
-
     font-size: 16px;
-
     padding: 16px 18px;
-
     outline: none;
-
     transition:
         border-color 0.25s ease,
         box-shadow 0.25s ease,
@@ -52,98 +63,137 @@
 }
 
 .form-group input::placeholder {
-    color: #64748b;
+    color: #7c8aa5;
 }
 
 .form-group input:hover {
-    border-color: rgba(96, 165, 250, 0.28);
+    border-color: rgba(0, 225, 255, 0.32);
 }
 
 .form-group input:focus {
-    border-color: rgba(37, 99, 235, 0.55);
-
-    background: rgba(15, 23, 42, 1);
-
+    border-color: rgba(0, 225, 255, 0.65);
+    background: rgba(6, 8, 22, 1);
     box-shadow:
-        0 0 0 4px rgba(37, 99, 235, 0.15),
-        0 12px 28px rgba(37, 99, 235, 0.18);
-
+        0 0 0 3px rgba(0, 225, 255, 0.12),
+        0 0 22px rgba(0, 225, 255, 0.18),
+        inset 0 0 18px rgba(108, 92, 255, 0.08);
     transform: translateY(-1px);
 }
 
-/* ---------- Botón principal ---------- */
+/* =========================================================
+   BOTÓN PRINCIPAL
+   ========================================================= */
 
-.button-primary {
+.btn-start {
     width: 100%;
-
-    background: linear-gradient(135deg, #2563eb, #1d4ed8);
-
-    color: #ffffff;
-
+    position: relative;
+    overflow: hidden;
     border: none;
     border-radius: 16px;
-
-    font-size: 16px;
-    font-weight: 700;
-
-    padding: 16px 22px;
-
+    padding: 18px 22px;
     cursor: pointer;
-
+    background: linear-gradient(
+        135deg,
+        #00d4ff,
+        #4f7dff,
+        #7c4dff
+    );
+    color: #ffffff;
+    font-family: "Orbitron", sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
     transition:
         transform 0.18s ease,
         box-shadow 0.25s ease,
         filter 0.25s ease;
-
     box-shadow:
-        0 12px 30px rgba(37, 99, 235, 0.28),
-        0 0 0 1px rgba(255, 255, 255, 0.03);
-
-    margin-top: 8px;
+        0 12px 28px rgba(79, 125, 255, 0.35),
+        0 0 24px rgba(0, 212, 255, 0.18);
 }
 
-.button-primary:hover {
-    transform: translateY(-2px);
+.btn-start::before {
+    content: "";
+    position: absolute;
+    top: -120%;
+    left: -40%;
+    width: 60%;
+    height: 320%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.45),
+        transparent
+    );
+    transform: rotate(20deg);
+    transition: left 0.6s ease;
+}
 
+.btn-start:hover {
+    transform: translateY(-2px) scale(1.01);
     filter: brightness(1.05);
-
     box-shadow:
-        0 18px 38px rgba(37, 99, 235, 0.38),
-        0 0 0 1px rgba(255, 255, 255, 0.04);
+        0 18px 40px rgba(79, 125, 255, 0.45),
+        0 0 36px rgba(0, 212, 255, 0.28);
 }
 
-.button-primary:active {
-    transform: translateY(0);
+.btn-start:hover::before {
+    left: 120%;
 }
 
-.button-primary:focus-visible {
-    outline: 3px solid rgba(34, 211, 238, 0.35);
+.btn-start:active {
+    transform: translateY(0) scale(0.995);
+}
+
+.btn-start:focus-visible {
+    outline: 3px solid rgba(0, 225, 255, 0.35);
     outline-offset: 3px;
 }
 
-/* ---------- Mensajes de validación ---------- */
-
-.input-error {
-    border-color: rgba(239, 68, 68, 0.55) !important;
-
-    box-shadow:
-        0 0 0 4px rgba(239, 68, 68, 0.14),
-        0 12px 28px rgba(239, 68, 68, 0.12) !important;
-}
+/* =========================================================
+   MENSAJES DE ERROR
+   ========================================================= */
 
 .error-text {
-    color: #fca5a5;
-
+    color: #ff9aa5;
     font-size: 13px;
-    font-weight: 500;
+    font-weight: 600;
+    text-align: center;
 }
 
-/* ---------- Estado deshabilitado ---------- */
+.input-error {
+    border-color: rgba(255, 80, 110, 0.65) !important;
+    box-shadow:
+        0 0 0 3px rgba(255, 80, 110, 0.12),
+        0 0 18px rgba(255, 80, 110, 0.18) !important;
+}
 
-.button-primary:disabled {
-    opacity: 0.65;
-    cursor: not-allowed;
+/* =========================================================
+   ESTADO DE CARGA
+   ========================================================= */
 
-    transform: none;
-    box-shadow: none;
+.btn-start.loading {
+    pointer-events: none;
+    opacity: 0.85;
+}
+
+.btn-start.loading::after {
+    content: "";
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    width: 16px;
+    height: 16px;
+    margin-top: -8px;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
