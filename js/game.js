@@ -225,9 +225,15 @@ const GameEngine = {
 
         const progress = document.getElementById("progressBar");
 
-        if (progress) {
-            progress.style.width = "100%";
-        }
+if (progress) {
+    progress.style.width = "100%";
+}
+
+if (this.player && this.player.email) {
+
+    updateScore(this.player.email, this.score);
+
+}
 
     },
 
