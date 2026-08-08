@@ -4,15 +4,18 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Misión Fiscalía Digital</title>
-    <meta name="description" content="Juego interactivo sobre seguridad digital y prevención del fraude en línea." />
 
-    <!-- Tipografía profesional -->
+    <title>Misión Fiscalía Digital</title>
+
+    <meta name="description"
+        content="Juego interactivo de ciberseguridad inspirado en Fiscalía Digital." />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
-    <!-- Estilos del proyecto -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/components.css" />
     <link rel="stylesheet" href="css/layout.css" />
@@ -22,46 +25,49 @@
 
     <main class="app">
 
-        <!-- Fondo decorativo -->
-        <div class="background-glow background-glow--one"></div>
-        <div class="background-glow background-glow--two"></div>
+        <!-- Fondo y efectos visuales -->
+        <div class="bg-grid"></div>
+        <div class="bg-glow bg-glow--left"></div>
+        <div class="bg-glow bg-glow--right"></div>
+        <div class="bg-ring"></div>
 
-        <!-- Tarjeta principal -->
-        <section class="card">
+        <!-- Tarjeta principal del juego -->
+        <section class="game-card">
 
+            <!-- Encabezado -->
             <header class="hero">
 
                 <div class="hero__badge">
-                    Plataforma interactiva de ciberseguridad
+                    CAPACITACIÓN N° 4
                 </div>
 
                 <h1 class="hero__title">
-                    Misión Fiscalía Digital
+                    FISCALÍA
+                    <br />
+                    DIGITAL
                 </h1>
 
                 <p class="hero__subtitle">
-                    Pon a prueba tus conocimientos sobre phishing, robo de identidad,
-                    contraseñas seguras y navegación responsable. Regístrate para
-                    iniciar la misión y guardar tu progreso.
+                    Completa el registro para iniciar la misión.
+                    Tus respuestas pondrán a prueba tus conocimientos sobre
+                    seguridad digital, phishing, robo de identidad y navegación
+                    segura.
                 </p>
 
             </header>
 
-            <section class="registration">
-
-                <h2 class="section-title">
-                    Registro del participante
-                </h2>
+            <!-- Registro del jugador -->
+            <section class="registration-panel">
 
                 <form id="registrationForm" class="form" novalidate>
 
                     <div class="form-group">
                         <label for="fullName">Nombre completo</label>
+
                         <input
                             id="fullName"
-                            name="fullName"
                             type="text"
-                            placeholder="Ej. Brayan Felipe Ortega"
+                            placeholder="Ingresa tu nombre completo"
                             autocomplete="name"
                             required
                         />
@@ -69,11 +75,11 @@
 
                     <div class="form-group">
                         <label for="email">Correo electrónico</label>
+
                         <input
                             id="email"
-                            name="email"
                             type="email"
-                            placeholder="ejemplo@correo.com"
+                            placeholder="usuario@correo.com"
                             autocomplete="email"
                             required
                         />
@@ -81,9 +87,9 @@
 
                     <div class="form-group">
                         <label for="age">Edad</label>
+
                         <input
                             id="age"
-                            name="age"
                             type="number"
                             placeholder="18"
                             min="10"
@@ -92,23 +98,31 @@
                         />
                     </div>
 
-                    <button id="startButton" type="submit" class="button-primary">
-                        Iniciar misión
+                    <button
+                        id="startButton"
+                        type="submit"
+                        class="btn-start">
+
+                        INICIAR MISIÓN
+
                     </button>
 
                 </form>
 
             </section>
 
+            <footer class="hero__footer">
+                Plataforma interactiva de ciberseguridad • Proyecto GitHub Pages
+            </footer>
+
         </section>
 
     </main>
 
-    <!-- Scripts del proyecto -->
     <script src="js/api.js"></script>
     <script src="js/register.js"></script>
-    <script src="js/questions.js"></script>
     <script src="js/game.js"></script>
+    <script src="js/questions.js"></script>
     <script src="js/app.js"></script>
 
 </body>
