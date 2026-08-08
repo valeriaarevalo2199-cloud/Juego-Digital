@@ -1,0 +1,156 @@
+/* =========================================================
+   BASE.CSS
+   Estilos globales del proyecto
+   ========================================================= */
+
+/* ---------- Reset ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Inter", Arial, sans-serif;
+    background: #060b16;
+    color: #f8fafc;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* ---------- Contenedor principal ---------- */
+
+.app {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px 20px;
+
+    position: relative;
+}
+
+/* ---------- Luces decorativas ---------- */
+
+.background-glow {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(90px);
+    z-index: -1;
+}
+
+.background-glow--one {
+    width: 450px;
+    height: 450px;
+
+    background: rgba(37, 99, 235, 0.35);
+
+    top: -120px;
+    left: -120px;
+}
+
+.background-glow--two {
+    width: 380px;
+    height: 380px;
+
+    background: rgba(34, 211, 238, 0.22);
+
+    bottom: -100px;
+    right: -100px;
+}
+
+/* ---------- Tarjeta principal ---------- */
+
+.card {
+    width: 560px;
+    max-width: 100%;
+
+    background: rgba(15, 23, 42, 0.82);
+
+    border: 1px solid rgba(148, 163, 184, 0.18);
+
+    border-radius: 24px;
+
+    backdrop-filter: blur(18px);
+
+    box-shadow: 0 24px 60px rgba(2, 6, 23, 0.55);
+
+    padding: 42px;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+    margin-bottom: 32px;
+}
+
+.hero__badge {
+    display: inline-block;
+
+    background: rgba(34, 211, 238, 0.12);
+
+    border: 1px solid rgba(34, 211, 238, 0.28);
+
+    color: #67e8f9;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    padding: 8px 14px;
+    border-radius: 999px;
+
+    margin-bottom: 18px;
+}
+
+.hero__title {
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 1.08;
+
+    margin-bottom: 16px;
+}
+
+.hero__subtitle {
+    color: #cbd5e1;
+
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* ---------- Secciones ---------- */
+
+.section-title {
+    font-size: 22px;
+    font-weight: 700;
+
+    margin-bottom: 22px;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 640px) {
+
+    .card {
+        width: 100%;
+        padding: 28px;
+        border-radius: 20px;
+    }
+
+    .hero__title {
+        font-size: 34px;
+    }
+
+    .hero__subtitle {
+        font-size: 15px;
+    }
+}
