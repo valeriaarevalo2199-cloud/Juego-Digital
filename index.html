@@ -12,12 +12,14 @@
 <meta name="description"
     content="Juego interactivo de ciberseguridad inspirado en Fiscalía Digital." />
 
+<!-- Tipografías -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" />
 
+<!-- Estilos -->
 <link rel="stylesheet" href="css/base.css" />
 <link rel="stylesheet" href="css/components.css" />
 <link rel="stylesheet" href="css/layout.css" />
@@ -37,6 +39,7 @@
     <div class="bg-ring"></div>
 
     <section class="game-card">
+
 
         <!-- =====================================================
              PANTALLA DE REGISTRO
@@ -124,135 +127,8 @@
                 Plataforma interactiva de ciberseguridad • Proyecto GitHub Pages
             </footer>
 
-        <!-- =====================================================
-             PANTALLA DE RESULTADOS
-             ===================================================== -->
-
-        <div id="screen-results" class="screen">
-
-            <section class="results">
-
-                <!-- Insignia superior -->
-
-                <div class="hero__badge">
-                    MISIÓN COMPLETADA
-                </div>
-
-                <!-- Título principal -->
-
-                <h2 class="hero__title">
-                    OPERACIÓN
-                    <br />
-                    FINALIZADA
-                </h2>
-
-                <!-- Descripción -->
-
-                <p class="hero__subtitle">
-                    Has completado el entrenamiento de <strong>Fiscalía Digital</strong>.
-                    Tu desempeño fue analizado por el sistema y se ha generado
-                    un informe con tu puntaje, nivel de rendimiento y rango obtenido.
-                </p>
-
-                <!-- Puntaje principal -->
-
-                <div class="results__score" id="finalScore">
-                    0 / 150
-                </div>
-
-                <!-- Panel de resultados -->
-
-                <div class="results-panel">
-
-                    <div class="results-panel__header">
-
-                        <div class="hero__badge">
-                            INFORME DEL SISTEMA
-                        </div>
-
-                    </div>
-
-                    <!-- Rango -->
-
-                    <div class="result-item">
-
-                        <div class="result-label">
-                            RANGO OBTENIDO
-                        </div>
-
-                        <div class="result-value" id="resultRank">
-                            Investigador Digital
-                        </div>
-
-                    </div>
-
-                    <!-- Rendimiento -->
-
-                    <div class="result-item">
-
-                        <div class="result-label">
-                            RENDIMIENTO
-                        </div>
-
-                        <div class="result-value" id="resultPercentage">
-                            0%
-                        </div>
-
-                    </div>
-
-                    <!-- Barra de rendimiento -->
-
-                    <div class="results-progress">
-
-                        <div class="progress">
-
-                            <div id="resultsProgressBar" class="progress__bar"></div>
-
-                        </div>
-
-                    </div>
-
-                    <!-- Mensaje personalizado -->
-
-                    <div class="result-message-container">
-
-                        <p id="resultMessage" class="results__message">
-                            Tu resultado aparecerá aquí al finalizar la misión.
-                        </p>
-
-                    </div>
-
-                </div>
-
-                <!-- Acciones -->
-
-                <div class="results-actions">
-
-                    <button
-                        id="restartButton"
-                        type="button"
-                        class="btn-start">
-
-                        REINICIAR MISIÓN
-
-                    </button>
-
-                </div>
-
-                <!-- Pie -->
-
-                <footer class="hero__footer">
-                    Sistema de Evaluación • Fiscalía Digital • Certificación de Entrenamiento
-                </footer>
-
-            </section>
-
         </div>
 
-
-        </div>
-
-        <!-- AQUÍ CONTINUARÁN LAS OTRAS DOS PANTALLAS -->
 
         <!-- =====================================================
              PANTALLA DEL JUEGO
@@ -385,13 +261,141 @@
         </div>
 
 
-        
+        <!-- =====================================================
+             PANTALLA DE RESULTADOS
+             ===================================================== -->
+
+        <div id="screen-results" class="screen">
+
+            <section class="results">
+
+                <!-- Insignia superior -->
+
+                <div class="hero__badge">
+                    MISIÓN COMPLETADA
+                </div>
+
+                <!-- Título principal -->
+
+                <h2 class="hero__title">
+                    OPERACIÓN
+                    <br />
+                    FINALIZADA
+                </h2>
+
+                <!-- Descripción -->
+
+                <p class="hero__subtitle">
+                    Has completado el entrenamiento de <strong>Fiscalía Digital</strong>.
+                    Tu desempeño fue analizado por el sistema y se ha generado
+                    un informe con tu puntaje, nivel de rendimiento y rango obtenido.
+                </p>
+
+                <!-- Puntaje principal -->
+
+                <div class="results__score" id="finalScore">
+                    0 / 150
+                </div>
+
+                <!-- Panel de resultados -->
+
+                <div class="results-panel">
+
+                    <div class="results-panel__header">
+
+                        <div class="hero__badge">
+                            INFORME DEL SISTEMA
+                        </div>
+
+                    </div>
+
+                    <!-- Rango -->
+
+                    <div class="result-item">
+
+                        <div class="result-label">
+                            RANGO OBTENIDO
+                        </div>
+
+                        <div class="result-value" id="resultRank">
+                            Investigador Digital
+                        </div>
+
+                    </div>
+
+                    <!-- Rendimiento -->
+
+                    <div class="result-item">
+
+                        <div class="result-label">
+                            RENDIMIENTO
+                        </div>
+
+                        <div class="result-value" id="resultPercentage">
+                            0%
+                        </div>
+
+                    </div>
+
+                    <!-- Barra de rendimiento -->
+
+                    <div class="results-progress">
+
+                        <div class="progress">
+
+                            <div id="resultsProgressBar" class="progress__bar"></div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Mensaje personalizado -->
+
+                    <div class="result-message-container">
+
+                        <p id="resultMessage" class="results__message">
+                            Tu resultado aparecerá aquí al finalizar la misión.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- Acciones -->
+
+                <div class="results-actions">
+
+                    <button
+                        id="restartButton"
+                        type="button"
+                        class="btn-start">
+
+                        REINICIAR MISIÓN
+
+                    </button>
+
+                </div>
+
+                <!-- Pie -->
+
+                <footer class="hero__footer">
+                    Sistema de Evaluación • Fiscalía Digital • Certificación de Entrenamiento
+                </footer>
+
+            </section>
+
+        </div>
+
 
     </section>
 
 </main>
 
-<!-- Scripts -->
+<!-- =====================================================
+     SCRIPTS
+     El orden es importante
+     ===================================================== -->
+
 <script src="js/api.js"></script>
 <script src="js/questions.js"></script>
 <script src="js/game.js"></script>
