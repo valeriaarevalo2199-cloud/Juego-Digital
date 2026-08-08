@@ -1,40 +1,49 @@
 <!DOCTYPE html>
+
 <html lang="es">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Misión Fiscalía Digital</title>
 
-    <meta name="description"
-        content="Juego interactivo de ciberseguridad inspirado en Fiscalía Digital." />
+<title>Misión Fiscalía Digital</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<meta name="description"
+    content="Juego interactivo de ciberseguridad inspirado en Fiscalía Digital." />
 
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <link rel="stylesheet" href="css/base.css" />
-    <link rel="stylesheet" href="css/components.css" />
-    <link rel="stylesheet" href="css/layout.css" />
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+<link rel="stylesheet" href="css/base.css" />
+<link rel="stylesheet" href="css/components.css" />
+<link rel="stylesheet" href="css/layout.css" />
+
+
 </head>
 
 <body>
 
-    <main class="app">
 
-        <!-- Fondo y efectos visuales -->
-        <div class="bg-grid"></div>
-        <div class="bg-glow bg-glow--left"></div>
-        <div class="bg-glow bg-glow--right"></div>
-        <div class="bg-ring"></div>
+<main class="app">
 
-        <!-- Tarjeta principal del juego -->
-        <section class="game-card">
+    <!-- Fondo gamer -->
+    <div class="bg-grid"></div>
+    <div class="bg-glow bg-glow--left"></div>
+    <div class="bg-glow bg-glow--right"></div>
+    <div class="bg-ring"></div>
 
-            <!-- Encabezado -->
+    <section class="game-card">
+
+        <!-- =====================================================
+             PANTALLA DE REGISTRO
+             ===================================================== -->
+
+        <div id="screen-register" class="screen active">
+
             <header class="hero">
 
                 <div class="hero__badge">
@@ -48,15 +57,15 @@
                 </h1>
 
                 <p class="hero__subtitle">
-                    Completa el registro para iniciar la misión.
-                    Tus respuestas pondrán a prueba tus conocimientos sobre
-                    seguridad digital, phishing, robo de identidad y navegación
-                    segura.
+                    Bienvenido, Investigador Digital.
+                    Completa el registro para iniciar la misión y poner a
+                    prueba tu capacidad para detectar información engañosa,
+                    verificar fuentes, analizar evidencia y proteger datos
+                    personales en entornos digitales.
                 </p>
 
             </header>
 
-            <!-- Registro del jugador -->
             <section class="registration-panel">
 
                 <form id="registrationForm" class="form" novalidate>
@@ -115,15 +124,281 @@
                 Plataforma interactiva de ciberseguridad • Proyecto GitHub Pages
             </footer>
 
-        </section>
+        </div>
 
-    </main>
+        <!-- =====================================================
+             PANTALLA DEL JUEGO
+             ===================================================== -->
 
-    <script src="js/api.js"></script>
+        <div id="screen-game" class="screen">
+
+            <!-- Cabecera tipo HUD -->
+
+            <header class="game-header">
+
+                <div class="game-header__left">
+
+                    <div class="hero__badge">
+                        MISIÓN ACTIVA
+                    </div>
+
+                    <h2 class="game-title">
+                        Investigador Digital
+                    </h2>
+
+                </div>
+
+                <div class="game-header__right">
+
+                    <div class="score">
+                        PUNTAJE: <span id="scoreValue">0</span>
+                    </div>
+
+                </div>
+
+            </header>
+
+            <!-- Barra de progreso -->
+
+            <section class="progress-panel">
+
+                <div class="progress-info">
+
+                    <span id="questionNumber" class="question-number">
+                        NIVEL 1 • PREGUNTA 1 DE 15
+                    </span>
+
+                    <span class="progress-percentage">
+                        PROGRESO
+                    </span>
+
+                </div>
+
+                <div class="progress">
+
+                    <div id="progressBar" class="progress__bar"></div>
+
+                </div>
+
+            </section>
+
+            <!-- Panel principal de la misión -->
+
+            <section class="question-card">
+
+                <div class="question-card__header">
+
+                    <div class="hero__badge">
+                        ANÁLISIS DE EVIDENCIA
+                    </div>
+
+                </div>
+
+                <h3 id="questionText" class="question-text">
+                    Cargando misión...
+                </h3>
+
+                <div class="question-card__footer">
+
+                    <div class="question-status">
+                        Selecciona la mejor respuesta para continuar.
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- Opciones de respuesta -->
+
+            <section class="options-panel">
+
+                <div id="optionsContainer" class="options">
+
+                    <!-- Las opciones se crean dinámicamente desde game.js -->
+
+                </div>
+
+            </section>
+
+            <!-- Controles del juego -->
+
+            <section class="game-actions">
+
+                <div class="game-actions__left">
+
+                    <div class="hero__badge">
+                        SISTEMA EN LÍNEA
+                    </div>
+
+                </div>
+
+                <div class="game-actions__right">
+
+                    <button
+                        id="nextButton"
+                        type="button"
+                        class="btn-start"
+                        disabled>
+
+                        SIGUIENTE PREGUNTA
+
+                    </button>
+
+                </div>
+
+            </section>
+
+            <!-- Estado inferior -->
+
+            <footer class="hero__footer">
+                Fiscalía Digital • Pensamiento crítico • Verificación • Seguridad • Protección de datos
+            </footer>
+
+            
+        <!-- =====================================================
+             PANTALLA DE RESULTADOS
+             ===================================================== -->
+
+        <div id="screen-results" class="screen">
+
+            <section class="results">
+
+                <!-- Insignia superior -->
+
+                <div class="hero__badge">
+                    MISIÓN COMPLETADA
+                </div>
+
+                <!-- Título principal -->
+
+                <h2 class="hero__title">
+                    OPERACIÓN
+                    <br />
+                    FINALIZADA
+                </h2>
+
+                <!-- Descripción -->
+
+                <p class="hero__subtitle">
+                    Has completado el entrenamiento de <strong>Fiscalía Digital</strong>.
+                    Tu desempeño fue analizado por el sistema y se ha generado
+                    un informe con tu puntaje, nivel de rendimiento y rango obtenido.
+                </p>
+
+                <!-- Puntaje principal -->
+
+                <div class="results__score" id="finalScore">
+                    0 / 150
+                </div>
+
+                <!-- Panel de resultados -->
+
+                <div class="results-panel">
+
+                    <div class="results-panel__header">
+
+                        <div class="hero__badge">
+                            INFORME DEL SISTEMA
+                        </div>
+
+                    </div>
+
+                    <!-- Rango -->
+
+                    <div class="result-item">
+
+                        <div class="result-label">
+                            RANGO OBTENIDO
+                        </div>
+
+                        <div class="result-value" id="resultRank">
+                            Investigador Digital
+                        </div>
+
+                    </div>
+
+                    <!-- Rendimiento -->
+
+                    <div class="result-item">
+
+                        <div class="result-label">
+                            RENDIMIENTO
+                        </div>
+
+                        <div class="result-value" id="resultPercentage">
+                            0%
+                        </div>
+
+                    </div>
+
+                    <!-- Barra de rendimiento -->
+
+                    <div class="results-progress">
+
+                        <div class="progress">
+
+                            <div id="resultsProgressBar" class="progress__bar"></div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Mensaje personalizado -->
+
+                    <div class="result-message-container">
+
+                        <p id="resultMessage" class="results__message">
+                            Tu resultado aparecerá aquí al finalizar la misión.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- Acciones -->
+
+                <div class="results-actions">
+
+                    <button
+                        id="restartButton"
+                        type="button"
+                        class="btn-start">
+
+                        REINICIAR MISIÓN
+
+                    </button>
+
+                </div>
+
+                <!-- Pie -->
+
+                <footer class="hero__footer">
+                    Sistema de Evaluación • Fiscalía Digital • Certificación de Entrenamiento
+                </footer>
+
+            </section>
+
+        </div>
+
+
+
+        </div>
+
+
+
+        
+        <!-- AQUÍ CONTINUARÁN LAS OTRAS DOS PANTALLAS -->
+
+    </section>
+
+</main>
+
+<!-- Scripts -->
+<script src="js/api.js"></script>
 <script src="js/questions.js"></script>
 <script src="js/game.js"></script>
 <script src="js/register.js"></script>
-   
+
 
 </body>
 
