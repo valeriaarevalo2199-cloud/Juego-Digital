@@ -199,8 +199,9 @@
 
 .game-actions {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between; /* Separa los elementos a los extremos */
     align-items: center;
+    margin-bottom: 22px; /* Añade un poco de espacio abajo para que no choque con el footer */
 }
 
 /* =========================================================
