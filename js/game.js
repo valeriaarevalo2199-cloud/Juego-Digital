@@ -113,7 +113,7 @@ const GameEngine = {
             option.classList.remove("selected");
         });
 
-        element.classList.add("selected";
+        element.classList.add("selected");
 
         this.selectedAnswer = index;
 
