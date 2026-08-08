@@ -119,25 +119,37 @@ const Registration = {
 
     },
 
-    startGame(participant) {
+    async startGame(participant) {
 
-        const button = document.getElementById("startButton");
+    const button = document.getElementById("startButton");
 
-        button.classList.add("loading");
+    button.classList.add("loading");
 
-        button.textContent = "INICIANDO...";
+    button.textContent = "INICIANDO...";
 
-        setTimeout(() => {
+    const saved = await saveParticipant(participant);
 
-            button.classList.remove("loading");
+    if (!saved) {
 
-            button.textContent = "INICIAR MISIÓN";
+        button.classList.remove("loading");
 
-            GameEngine.start(participant);
+        button.textContent = "INICIAR MISIÓN";
 
-        }, 700);
+        this.showError(
+            "No fue posible registrar al participante. Intenta nuevamente."
+        );
+
+        return;
 
     }
+
+    button.classList.remove("loading");
+
+    button.textContent = "INICIAR MISIÓN";
+
+    GameEngine.start(participant);
+
+}
 
 };
 
