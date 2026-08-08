@@ -1,122 +1,78 @@
 /* =========================================================
-   API.JS
-   Comunicación con Google Apps Script y Google Sheets
-   ========================================================= */
-
-/*
-   Reemplaza la URL por la que genere tu Apps Script cuando
-   publiques la aplicación web.
-
-   Ejemplo:
-   https://script.google.com/macros/s/AKfycbxxxxxxxxxxxxxxxxxxxx/exec
-*/
+API.JS
+Comunicación con Google Apps Script y Google Sheets
+========================================================= */
 
 const API_URL = "https://script.google.com/macros/s/AKfycby3VvaRaGon6B0rZjTIfytgx2e4l0fbMp6BlhIZU80gcnAZEUU7WCk5Vy4SK5Xk52VL/exec";
 
 /* =========================================================
-   REGISTRAR PARTICIPANTE
-   ========================================================= */
+REGISTRAR PARTICIPANTE
+========================================================= */
 
 async function saveParticipant(participant) {
 
-    if (API_URL === "AQUI_VA_LA_URL_DE_TU_APPS_SCRIPT") {
+```
+try {
 
-        console.warn(
-            "API_URL no configurada. El juego continuará sin guardar datos."
-        );
+    const formData = new FormData();
 
-        return true;
+    formData.append("action", "register");
+    formData.append("fullName", participant.fullName);
+    formData.append("email", participant.email);
+    formData.append("age", participant.age);
+    formData.append("score", 0);
 
-    }
+    const response = await fetch(API_URL, {
+        method: "POST",
+        body: formData
+    });
 
-    try {
+    const result = await response.json();
 
-        const response = await fetch(API_URL, {
+    return result.success === true;
 
-            method: "POST",
+} catch (error) {
 
-            headers: {
-                "Content-Type": "application/json"
-            },
+    console.error("Error guardando participante:", error);
 
-            body: JSON.stringify({
+    return false;
 
-                action: "register",
-
-                fullName: participant.fullName,
-
-                email: participant.email,
-
-                age: participant.age,
-
-                score: 0
-
-            })
-
-        });
-
-        const result = await response.json();
-
-        return result.success === true;
-
-    } catch (error) {
-
-        console.error("Error guardando participante:", error);
-
-        return false;
-
-    }
+}
+```
 
 }
 
 /* =========================================================
-   ACTUALIZAR PUNTAJE
-   ========================================================= */
+ACTUALIZAR PUNTAJE
+========================================================= */
 
 async function updateScore(email, score) {
 
-    if (API_URL === "AQUI_VA_LA_URL_DE_TU_APPS_SCRIPT") {
+```
+try {
 
-        console.warn(
-            "API_URL no configurada. El puntaje no se enviará a Google Sheets."
-        );
+    const formData = new FormData();
 
-        return true;
+    formData.append("action", "score");
+    formData.append("email", email);
+    formData.append("score", score);
 
-    }
+    const response = await fetch(API_URL, {
+        method: "POST",
+        body: formData
+    });
 
-    try {
+    const result = await response.json();
 
-        const response = await fetch(API_URL, {
+    return result.success === true;
 
-            method: "POST",
+} catch (error) {
 
-            headers: {
-                "Content-Type": "application/json"
-            },
+    console.error("Error actualizando puntaje:", error);
 
-            body: JSON.stringify({
+    return false;
 
-                action: "score",
-
-                email: email,
-
-                score: score
-
-            })
-
-        });
-
-        const result = await response.json();
-
-        return result.success === true;
-
-    } catch (error) {
-
-        console.error("Error actualizando puntaje:", error);
-
-        return false;
-
-    }
+}
+```
 
 }
