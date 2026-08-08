@@ -3,7 +3,7 @@ API.JS
 Comunicación con Google Apps Script y Google Sheets
 ========================================================= */
 
-const API_URL = "https://script.google.com/macros/s/AKfycbxCHktsnTV_aBhMAWtgHGMPzgPdyLBy_N0rnbxe4oPHwzkD2-mq_JACkro4Y0VkWenA/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbwmdgQZg2BQCZHfGClmG5WyXwBOglnPTA8V7O4lv8A8uhoEMQixtcZm5AlGxjdHTjFH/exec";
 
 /* =========================================================
 REGISTRAR PARTICIPANTE
@@ -11,7 +11,7 @@ REGISTRAR PARTICIPANTE
 
 async function saveParticipant(participant) {
 
-```
+
 try {
 
     const formData = new FormData();
@@ -38,7 +38,7 @@ try {
     return false;
 
 }
-```
+
 
 }
 
@@ -48,7 +48,7 @@ ACTUALIZAR PUNTAJE
 
 async function updateScore(email, score) {
 
-```
+
 try {
 
     const formData = new FormData();
@@ -73,6 +73,6 @@ try {
     return false;
 
 }
-```
+
 
 }
