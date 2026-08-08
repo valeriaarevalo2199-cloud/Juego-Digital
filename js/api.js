@@ -11,7 +11,7 @@
    https://script.google.com/macros/s/AKfycbxxxxxxxxxxxxxxxxxxxx/exec
 */
 
-const API_URL = "https://script.google.com/macros/s/AKfycbxQo2zNiOlcJith16lnwiSyxabmfqCY0MdzkfTEjPsjp6t41wr-Z3JsvmoJzDWliqDM/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbwZEoUFIxAdFVNuNqJzNcujSVMOnY667XhHTtCeHqkwyTDf1Bn6nrS4-23bhbE9Jos/exec";
 
 /* =========================================================
    REGISTRAR PARTICIPANTE
