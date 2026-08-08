@@ -1,62 +1,101 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Misión Fiscalía Digital</title>
 
-    <!-- Hoja de estilos -->
-    <link rel="stylesheet" href="style.css">
+    <!-- Tipografía -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/layout.css">
 </head>
+
 <body>
 
-    <!-- Pantalla de bienvenida -->
-    <div class="contenedor">
+    <main class="app">
 
-        <h1>Misión Fiscalía Digital</h1>
+        <!-- Fondo decorativo -->
+        <div class="background-glow background-glow--one"></div>
+        <div class="background-glow background-glow--two"></div>
 
-        <p class="descripcion">
-            Pon a prueba tus conocimientos sobre seguridad digital,
-            phishing, robo de identidad y navegación segura.
-        </p>
+        <!-- Tarjeta principal -->
+        <section class="card">
 
-        <!-- Formulario de registro -->
-        <div class="registro">
+            <header class="card__header">
+                <p class="eyebrow">SIMULADOR INTERACTIVO</p>
+                <h1 class="title">Misión Fiscalía Digital</h1>
+                <p class="subtitle">
+                    Evalúa tus conocimientos sobre seguridad digital, phishing,
+                    robo de identidad y navegación segura.
+                </p>
+            </header>
 
-            <h2>Registro del participante</h2>
+            <form id="registrationForm" class="form" novalidate>
 
-            <input
-                type="text"
-                id="nombre"
-                placeholder="Nombre completo"
-            >
+                <div class="form__group">
+                    <label for="fullName" class="label">Nombre completo</label>
+                    <input
+                        id="fullName"
+                        name="fullName"
+                        type="text"
+                        class="input"
+                        placeholder="Ej. Brayan Felipe Ortega"
+                        autocomplete="name"
+                        required
+                    />
+                </div>
 
-            <input
-                type="email"
-                id="correo"
-                placeholder="Correo electrónico"
-            >
+                <div class="form__group">
+                    <label for="email" class="label">Correo electrónico</label>
+                    <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        class="input"
+                        placeholder="ejemplo@correo.com"
+                        autocomplete="email"
+                        required
+                    />
+                </div>
 
-            <input
-                type="number"
-                id="edad"
-                placeholder="Edad"
-                min="10"
-                max="100"
-            >
+                <div class="form__group">
+                    <label for="age" class="label">Edad</label>
+                    <input
+                        id="age"
+                        name="age"
+                        type="number"
+                        class="input"
+                        placeholder="18"
+                        min="10"
+                        max="100"
+                        required
+                    />
+                </div>
 
-            <button id="btnComenzar">
-                Comenzar misión
-            </button>
+                <button id="startButton" type="submit" class="button button--primary">
+                    Iniciar misión
+                </button>
 
-        </div>
+            </form>
 
-    </div>
+        </section>
 
-    <!-- Scripts del proyecto -->
-    <script src="registro.js"></script>
-    <script src="preguntas.js"></script>
-    <script src="script.js"></script>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/register.js"></script>
+    <script src="js/questions.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
 
 </body>
 </html>
